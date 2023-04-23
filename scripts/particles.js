@@ -43,6 +43,35 @@ const offscreenParticleCtx = offscreenParticleCanvas.getContext("2d", {
   alpha: false,
 });
 
+/*trck demo */
+const truck = {
+  x: 100, // Example value
+  y: 200, // Example value
+  width: 50, // Example value
+  height: 20, // Example value
+  collectedOil: 0,
+  draw: function(ctx) {
+    ctx.fillStyle = "blue"; // Choose a color for the truck
+    ctx.fillRect(this.x, this.y, this.width, this.height);
+  },
+  collectOil: function() {
+    const OIL_TYPE = ...; // Set the correct value for the oil element type
+
+    for (let x = this.x; x < this.x + this.width; x++) {
+      for (let y = this.y; y < this.y + this.height; y++) {
+        const idx = y * width + x;
+        if (gameImagedata32[idx] === OIL_TYPE) {
+          this.collectedOil++;
+          gameImagedata32[idx] = BACKGROUND;
+        }
+      }
+    }
+  }
+};
+
+/*  end demo */
+
+
 /* These values index into __particleInit and __particleActions arrays */
 const UNKNOWN_PARTICLE = 0;
 const NITRO_PARTICLE = 1;
