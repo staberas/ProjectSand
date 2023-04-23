@@ -149,8 +149,8 @@ function updateGame() {
     i -= width;
   }
   // In your game loop or update function:
-  truck.draw(ctx); // Pass the 2D context of your canvas
-  truck.collectOil();
+  //truck.draw(ctx); // Pass the 2D context of your canvas
+  //truck.collectOil();
 
   perfRecordFrame();
   frameDebt--;
