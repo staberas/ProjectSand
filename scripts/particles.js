@@ -55,7 +55,7 @@ const truck = {
     ctx.fillRect(this.x, this.y, this.width, this.height);
   },
   collectOil: function() {
-    const OIL_TYPE = ...; // Set the correct value for the oil element type
+    const OIL_TYPE = OIL; // Set the correct value for the oil element type
 
     for (let x = this.x; x < this.x + this.width; x++) {
       for (let y = this.y; y < this.y + this.height; y++) {
