@@ -1395,7 +1395,7 @@ function surroundedByAdjacentCount(x, y, i, type) {
 function doGravity(x, y, i, fallAdjacent, chance) {
   if (random() >= chance) return false;
 
-  if (y === MAX_Y_IDX) {
+  if (y === MAX_Y_IDX  || gameImagedata32[i + width] === FLOOR_TYPE) {
     gameImagedata32[i] = BACKGROUND;
     return true;
   }
