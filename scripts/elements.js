@@ -1393,6 +1393,7 @@ function surroundedByAdjacentCount(x, y, i, type) {
 }
 
 const preventFallingThroughFloor = true;
+const MAX_Y_IDX = 99; // Since indices start at 0
 const BOTTOM_ROW_IDX = MAX_Y_IDX - 1;
 
 function doGravity(x, y, i, fallAdjacent, chance) {
