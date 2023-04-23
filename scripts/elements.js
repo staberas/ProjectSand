@@ -1392,13 +1392,19 @@ function surroundedByAdjacentCount(x, y, i, type) {
   return count;
 }
 
+const preventFallingThroughFloor = true;
+const BOTTOM_ROW_IDX = MAX_Y_IDX - 1;
+
 function doGravity(x, y, i, fallAdjacent, chance) {
   if (random() >= chance) return false;
 
-  if (y === MAX_Y_IDX  || gameImagedata32[i + width] === FLOOR_TYPE) {
+  if (y === MAX_Y_IDX) {
     gameImagedata32[i] = BACKGROUND;
     return true;
   }
+
+  // Prevent elements from moving below the bottom row if preventFallingThroughFloor is true
+  if (preventFallingThroughFloor && y === BOTTOM_ROW_IDX) return false;
 
   var newI;
 
